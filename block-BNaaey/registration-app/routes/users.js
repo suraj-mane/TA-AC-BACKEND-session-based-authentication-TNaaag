@@ -30,7 +30,7 @@ router.get('/login', (req,res,next) => {
 router.post('/login', (req,res,next) => {
   var {email, password} = req.body;
   if(!email || !password){
-    res.redirect('/users/login');
+    return res.redirect('/users/login');
   }
   Users.findOne({email}, (err, user) => {
     if(err) return next(err);
