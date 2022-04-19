@@ -16,18 +16,19 @@ router.get('/register', (req,res,next) => {
 
 /* POST Create users*/
 router.post('/register', (req,res,next) => {
-  var email = req.body.email;
-  var password = req.body.password;
-  Users.findOne({email}, (err,data) => {
-    if(data) {
-      req.flash('error','Email is already exist');
-      res.redirect('/users/register')
-    } else {
-      Users.create(req.body, (err,user) => {
-        if(err) return next(err);
-        res.redirect('/users/login');
-      })
-    }
+  Users.create(req.body, (err,user) => {
+    if(err){
+      if(err.index === 0){
+        req.flash('error', 'Email is alredy exist');
+        return  res.redirect('/users/register');
+      }
+      if(err.errors.password.name === "ValidatorError"){
+        req.flash('error','Password is too short');
+        return res.redirect('/users/register');
+      }
+      return res.json({err});
+    }  
+    res.redirect('/users/login');
   })
 })
 
