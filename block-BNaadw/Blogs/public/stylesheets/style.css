@@ -1,0 +1,59 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.nav {
+  padding: 1rem;
+}
+.nav-btn {
+  margin: 0 1rem;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.form {
+  width: 700px;
+  margin: 10rem auto;
+  padding: 2rem;
+  border: 2px solid black;
+  text-align: center;
+}
+.input {
+  width: 99%;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 0.8rem 0;
+}
+.error {
+  color: red;
+}
+.articles-btn{
+  margin: 1rem 0;
+}
+.article-link{
+  text-decoration: none;
+}
+.display {
+  margin: 2rem 0;
+  text-align: center;
+}
+.icon {
+  font-size: 2rem;
+  padding: 2rem;
+}
+.footer{
+  background-color: rgb(28, 28, 28);
+  width: 100%;
+  position: fixed;
+  bottom: 0rem;
+  text-align: center;
+}
+.footer-name{
+  color: white;
+  padding: 1rem
+}
